@@ -3,6 +3,13 @@
 .section-selector-2 { background-color: var(--gray-200) }
 .section-selector-3 { background-color: var(--white-000) }
 
+.theme-dark.section-selector-1 a:link,
+.theme-dark.section-selector-1 a:visited { color: var(--green-200) }
+
+.theme-dark.section-selector-1 a:focus,
+.theme-dark.section-selector-1 a:hover,
+.theme-dark.section-selector-1 a:active { color: var(--white-000) }
+
 .section-selector-1.theme-light { background-color: var(--green-800) }
 .section-selector-1 .col-4 h3 { color: var(--white-000) }
 .section-selector-1 .col-4 p { color: var(--white-000) }
@@ -15,6 +22,8 @@
 .section-selector-4 div[class^='flex-cols-'] div[class^='col-'] figure.icon { color: var(--white-000) }
 .section-selector-4.theme-dark { background-color: var(--green-800) }
 
+header h1 { font-size: var(--font-size-xxxl) } 
+body {font-family:'Playfair Display', serif;}
 
 
 
