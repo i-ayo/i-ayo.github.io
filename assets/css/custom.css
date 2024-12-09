@@ -1,3 +1,225 @@
 
 
 header .col-text h2, .col-1 > h3 { line-height: 1.8 }
+
+/* Add your custom CSS below */
+header.theme-dark { background-color: var(--black-000) }
+header.theme-dark .container-btn a.btn:nth-child(2):focus,
+header.theme-dark .container-btn a.btn:nth-child(2):hover,
+header.theme-dark .container-btn a.btn:nth-child(2):active { color: var(--black-000) }
+
+header.theme-dark .container-btn a.btn:nth-child(1):focus,
+header.theme-dark .container-btn a.btn:nth-child(1):hover,
+header.theme-dark .container-btn a.btn:nth-child(1):active { color: var(--black-000) }
+
+header.theme-dark .container-btn a.btn:nth-child(1):focus,
+header.theme-dark .container-btn a.btn:nth-child(1):hover,
+header.theme-dark .container-btn a.btn:nth-child(1):active { background-color: var(--rose-100) }
+
+header.theme-dark .container-btn a.btn:nth-child(1):focus,
+header.theme-dark .container-btn a.btn:nth-child(1):hover,
+header.theme-dark .container-btn a.btn:nth-child(1):active { border-color: var(--rose-100) }
+
+header.theme-dark .container-btn a.btn:nth-child(2):focus,
+header.theme-dark .container-btn a.btn:nth-child(2):hover,
+header.theme-dark .container-btn a.btn:nth-child(2):active { background-color: var(--rose-100) }
+
+header.theme-dark .container-btn a.btn:nth-child(2):focus,
+header.theme-dark .container-btn a.btn:nth-child(2):hover,
+header.theme-dark .container-btn a.btn:nth-child(2):active { border-color: var(--rose-100) }
+
+nav.theme-dark a#btn-cta:focus,
+nav.theme-dark a#btn-cta:hover,
+nav.theme-dark a#btn-cta:active { border-color: var(--rose-100) }
+nav.theme-dark a#btn-cta:focus,
+nav.theme-dark a#btn-cta:hover,
+nav.theme-dark a#btn-cta:active { border-color: var(--rose-100) }
+nav.theme-dark a#btn-cta:focus,
+nav.theme-dark a#btn-cta:hover,
+nav.theme-dark a#btn-cta:active { border-color: var(--gray-300) }
+nav.theme-dark a#btn-cta:focus,
+nav.theme-dark a#btn-cta:hover,
+nav.theme-dark a#btn-cta:active { color: var(--black-000) }
+nav.theme-dark a#btn-cta:focus,
+nav.theme-dark a#btn-cta:hover,
+nav.theme-dark a#btn-cta:active { background-color: var(--gray-300) }
+header.theme-dark .badge { background-color: var(--gray-050) }
+
+
+/* Logo styling */
+.brand {
+    float: right; /* Float the logo to the right */
+  }
+  
+  .logo {
+    max-height: 70px; /* Adjust the desired height */
+    width: auto; /* Maintain aspect ratio */
+  }
+
+
+  /* Image Section */
+.col-2-col-visual {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .col-2-col-visual img {
+    max-width: 90%; /* Adjust the maximum width as needed */
+    margin-top: -40px; /* Adjust the top margin to overlap with the welcome badge */
+    border-radius: 50px; /* Adjust corner roundness */
+}
+
+.title {
+    font-family: 'Poppins', sans-serif; /* Use a custom font */
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .subtitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    margin: 20px 0;
+    line-height: 1.8;
+  }
+
+
+
+
+/*Footer Design*/
+
+footer.theme-dark > ul.footer-links li a:link,
+footer.theme-dark > ul.footer-links li a:visited { text-decoration-color: transparent }
+
+footer.theme-dark > ul.footer-links li a:focus,
+footer.theme-dark > ul.footer-links li a:hover,
+footer.theme-dark > ul.footer-links li a:active { text-decoration-color: transparent }
+
+footer.theme-dark > ul.footer-icons li a:link i,
+footer.theme-dark > ul.footer-icons li a:visited i { color: var(--red-200) }
+
+footer.theme-dark > h2 { color: var(--white-000) }
+footer.theme-dark > h3 { color: var(--gray-300) }
+footer.theme-dark > ul.footer-icons li a:focus i,
+footer.theme-dark > ul.footer-icons li a:hover i,
+footer.theme-dark > ul.footer-icons li a:active i { color: var(--red-100) }
+
+footer.theme-dark > ul.footer-links li a:link,
+footer.theme-dark > ul.footer-links li a:visited { color: var(--red-200) }
+
+footer.theme-dark .copyright p { color: var(--black-000) }
+footer.theme-dark .copyright { background-color: var(--red-200) }
+footer.theme-dark > ul.footer-links li a:focus,
+footer.theme-dark > ul.footer-links li a:hover,
+footer.theme-dark > ul.footer-links li a:active { color: var(--red-050) }
+
+/* Style for Privacy Link */
+footer.theme-dark .privacy a:link,
+footer.theme-dark .privacy a:visited {
+    color: var(--red-200);
+    text-decoration: none; /* Optional: Ensures no underline */
+}
+
+footer.theme-dark .privacy a:focus,
+footer.theme-dark .privacy a:hover,
+footer.theme-dark .privacy a:active {
+    color: var(--red-100);
+}
+
+.title2 {
+    font-family: 'Poppins', sans-serif; /* Use a custom font */
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+.subtitle2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    margin: 20px 0;
+    line-height: 1.8;
+  }
+
+  .title3 {
+    font-family: 'Poppins', sans-serif; /* Use a custom font */
+    font-size: 49px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .subtitle3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    margin: 20px 0;
+    line-height: 1.8;
+  }
+
+  .title4{
+    font-family: 'Poppins', sans-serif; /* Use a custom font */
+    font-size: 49px;
+    font-weight: 400;
+    line-height: 1.2;
+
+  }
+
+  .text{
+    font-family: 'Poppins', sans-serif; /* Use a custom font */
+    font-size: 49px;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  .title5{
+    font-family: 'Poppins', sans-serif; /* Use a custom font */
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 1.2;
+
+  }
+
+  .colorText{
+
+    color: var(--red-200);
+
+  }
+
+  
+.section-selector-1 { background-color: var(--white-000) }
+.theme-light.section-selector-1 #btn-submit { color: var(--black-000) }
+.theme-light.section-selector-1 #btn-submit:focus,
+.theme-light.section-selector-1 #btn-submit:hover,
+.theme-light.section-selector-1 #btn-submit:active { color: var(--black-000) }
+
+.theme-light.section-selector-1 #btn-submit { border-color: var(--slate-200) }
+.theme-light.section-selector-1 #btn-submit { background-color: var(--slate-200) }
+.theme-light.section-selector-1 #btn-submit:focus,
+.theme-light.section-selector-1 #btn-submit:hover,
+.theme-light.section-selector-1 #btn-submit:active { background-color: var(--slate-500) }
+
+.theme-light.section-selector-1 #btn-submit:focus,
+.theme-light.section-selector-1 #btn-submit:hover,
+.theme-light.section-selector-1 #btn-submit:active { border-color: var(--slate-500) }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
