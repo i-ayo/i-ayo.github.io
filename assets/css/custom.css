@@ -192,6 +192,13 @@ footer.theme-dark .privacy a:active {
 
   }
 
+  .form-footer, .form-row {
+    font-family: "Poppins", serif;
+    font-weight: 200;
+    font-style: normal;
+    color:white;
+  }
+
   
 .section-selector-1 { background-color: var(--white-000) }
 .theme-light.section-selector-1 #btn-submit { color: var(--black-000) }
@@ -199,16 +206,15 @@ footer.theme-dark .privacy a:active {
 .theme-light.section-selector-1 #btn-submit:hover,
 .theme-light.section-selector-1 #btn-submit:active { color: var(--black-000) }
 
-.theme-light.section-selector-1 #btn-submit { border-color: var(--slate-200) }
-.theme-light.section-selector-1 #btn-submit { background-color: var(--slate-200) }
+.theme-light.section-selector-1 #btn-submit { border-color: var(--white-000) }
+.theme-light.section-selector-1 #btn-submit { background-color: var(--white-000) }
 .theme-light.section-selector-1 #btn-submit:focus,
 .theme-light.section-selector-1 #btn-submit:hover,
-.theme-light.section-selector-1 #btn-submit:active { background-color: var(--slate-500) }
+.theme-light.section-selector-1 #btn-submit:active { background-color: var(--slate-050) }
 
 .theme-light.section-selector-1 #btn-submit:focus,
 .theme-light.section-selector-1 #btn-submit:hover,
-.theme-light.section-selector-1 #btn-submit:active { border-color: var(--slate-500) }
-
+.theme-light.section-selector-1 #btn-submit:active { border-color: var(--black-000) }
 
 
 
