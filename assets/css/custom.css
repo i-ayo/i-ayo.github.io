@@ -74,9 +74,9 @@ header.theme-dark .badge { background-color: var(--gray-050) }
 
 .title {
     font-family: 'Poppins', sans-serif; /* Use a custom font */
-    font-size: 56px;
+    font-size: 56px !important;
     font-weight: bold;
-    line-height: 1.2;
+    line-height: 1.2 !important;
   }
   
   .subtitle {
@@ -101,7 +101,7 @@ footer.theme-dark > ul.footer-links li a:hover,
 footer.theme-dark > ul.footer-links li a:active { text-decoration-color: transparent }
 
 footer.theme-dark > ul.footer-icons li a:link i,
-footer.theme-dark > ul.footer-icons li a:visited i { color: var(--red-200) }
+footer.theme-dark > ul.footer-icons li a:visited i { color: #fce0e0 }
 
 footer.theme-dark > h2 { color: var(--white-000) }
 footer.theme-dark > h3 { color: var(--gray-300) }
@@ -110,10 +110,10 @@ footer.theme-dark > ul.footer-icons li a:hover i,
 footer.theme-dark > ul.footer-icons li a:active i { color: var(--red-100) }
 
 footer.theme-dark > ul.footer-links li a:link,
-footer.theme-dark > ul.footer-links li a:visited { color: var(--red-200) }
+footer.theme-dark > ul.footer-links li a:visited { color: #fce0e0 }
 
 footer.theme-dark .copyright p { color: var(--black-000) }
-footer.theme-dark .copyright { background-color: var(--red-200) }
+footer.theme-dark .copyright { background-color: #fce0e0 }
 footer.theme-dark > ul.footer-links li a:focus,
 footer.theme-dark > ul.footer-links li a:hover,
 footer.theme-dark > ul.footer-links li a:active { color: var(--red-050) }
@@ -121,7 +121,7 @@ footer.theme-dark > ul.footer-links li a:active { color: var(--red-050) }
 /* Style for Privacy Link */
 footer.theme-dark .privacy a:link,
 footer.theme-dark .privacy a:visited {
-    color: var(--red-200);
+    color: #fce0e0;
     text-decoration: none; /* Optional: Ensures no underline */
 }
 
@@ -132,10 +132,10 @@ footer.theme-dark .privacy a:active {
 }
 
 .title2 {
-    font-family: 'Poppins', sans-serif; /* Use a custom font */
-    font-size: 56px;
-    font-weight: bold;
-    line-height: 1.2;
+    font-family: 'Poppins', sans-serif !important; /* Use a custom font */ 
+    font-size: 56px !important;
+    font-weight: bold !important;
+    line-height: 1.2 !important;
   }
 
 .subtitle2 {
@@ -219,7 +219,17 @@ footer.theme-dark .privacy a:active {
 
 
 
+/* Ensure focus and active states are visible for footer links */
+footer.theme-dark ul.footer-links li a:focus,
+footer.theme-dark ul.footer-links li a:active {
+    color: var(--red-100) !important; /* Keep lighter red color on focus/active */
+    /*text-decoration: underline; /* Maintain underline styling */
+    outline: none; /* Optional: Remove default focus outline */
+}
 
+
+
+/**/
 
 
 
