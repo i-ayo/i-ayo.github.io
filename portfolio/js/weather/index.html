@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iruo Umukoro | Front-end Developer | JavaScript Dublin Weather Project</title>
+    <meta name="description" content="Uses the Fetch API to retrieve current weather information for the city of Dublin, Ireland. By Iruo Umukoro.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/favicon-2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/img/favicon-2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/img/favicon-2/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon-2/site.webmanifest">
+
+	<!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/lunadoge.min.css" />
+    <link rel="stylesheet" href="../assets/css/javascript-projects.css" />
+    <link rel="stylesheet" href="../../../assets/css/custom.css" />
+
+     <!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 icons for buttons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+        /* ============ Header Colours =============*/
+        header.hero-block-js { background-color: #000000 }
+        /*header.hero-block-js h1 { color: rgb(239, 154, 154)}
+        header.hero-block-js h2 { color: var(--gray-700) }
+
+        /* Main Colours */
+        .theme-js {
+            background-color: #fff;
+            /* background-image: linear-gradient(147deg, #000000 0%, #04619f 74%); */
+            text-align: center;
+            background-image: url('assets/img/dublin-day.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .theme-js .box-weather {
+            margin: 0 auto; width: 400px; max-width: 80%;
+            background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5));
+            padding: 32px;
+        }
+
+        .theme-js h3 { color: #fff; font-size: 32px; margin-bottom: 32px }
+        .theme-js p { color: #fff; font-weight: bold }
+
+        .theme-js p a { color: #fff !important; font-weight: bold }
+
+        .data-table {
+            border-collapse: collapse;
+            font-size: 18px;
+            width: 100%;
+            overflow: scroll;
+            margin-bottom: 56px;
+            background-color: transparent;
+        }
+
+        .data-table td { padding: 12px 0; color:#fff; text-align: left; }
+
+        .data-table td:first-of-type { padding-left: 0; padding-right: 18px;  }
+
+        /* .data-table td:first-of-type span { background-color: blue; color:#fff; padding: 4px 12px; border-radius: 5px } */
+
+        .data-table td:last-of-type  { padding-left: 18px; padding-right: 0;  }
+
+        .table-lines tr { border-bottom: solid 1px #fff }
+
+        @media(max-width: 768px) {
+            .theme-js .box-weather { max-width: 95%; padding: 20px }
+            .theme-js h3 { font-size: 26px; margin-bottom: 22px; line-height: 1.3 }
+            .theme-js p { font-size: 16px }
+        }
+
+        .h2 {
+            font-weight: 500 !important;
+            line-height: 1.5 !important;
+            font-size: 35px !important;
+        }
+        
+
+        /*Footer Design*/
+        /* Add spacing between Privacy & Legal and copyright */
+        footer .privacy {
+            font-size: var(--font-size-base);
+            margin-bottom: 60px; /* Already exists — make sure it's applied */
+            font-family: var(--global-font); /* Match rest of footer */
+            }
+    
+            footer .privacy a {
+                font-size: 1.2rem; /* Make it slightly larger */
+            }
+    
+            /* Match font style for copyright */
+            footer .copyright p {
+            font-size: var(--font-size-base);
+            font-family: var(--global-font);
+            margin: 0; /* Ensure no spacing inside the copyright text itself */
+            }
+    
+            /* Extend copyright bar full width like homepage */
+            footer .copyright {
+            background-color:var(--red-100);
+            padding: 20px 0 24px 0;
+            width: 100vw; /* Make sure it spans the entire width */
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            text-align: center;
+            }
+    
+            /* Remove Footer Spacing */
+            footer {
+            padding-bottom: 0; /* Remove bottom padding entirely */
+            background-color: #000000;
+            margin: 0;
+            }
+    
+            footer .copyright p {
+                font-size: 1.2rem; /* Increase size for visibility */
+                margin: 0; /* Remove extra spacing */
+            }
+    
+            /* Ensure the icon size increases */
+            footer .footer-icons li i {
+                font-size: 2.2rem !important; /* Force the size to increase */
+            }
+    
+            /* Hover color change for footer links */
+            footer.theme-dark ul.footer-links li a:hover {
+                color: var(--red-100) !important; /* Lighter red color on hover */
+            }
+    
+            footer ul.footer-links, footer ul.footer-icons {
+                list-style-type: none;
+                margin-bottom:  32px;
+            }
+    
+            footer ul.footer-icons{
+                margin-bottom: 60px;
+            }
+            footer.theme-dark ul.footer-links li{
+                margin: 25px;
+            }
+    
+            /* Hover color change for social media icons */
+            footer.theme-dark ul.footer-icons li a:hover i {
+                color: var(--red-100); /* Lighter red color for icons on hover */
+            }
+    
+            footer.theme-dark > ul.footer-links li a:active { color: var(--red-050) }
+
+
+
+    </style>
+
+	<!-- Font Awesome 6.1 icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+
+<body>
+
+    <!-- navigation menu -->
+
+    <nav class="container-menu menu-desktop menu-sticky" style="background-color: #000000;">
+        <a href="../../../index.html"><img class="logo" src="../../../assets/img/ir.png" alt="website logo"></a>
+        <ul class="links-wrapper">
+            <li><a class="btn1" href="../../../index.html">Home</a></li>
+            <li><a class="btn1" href="../../../portfolio/index.html">Portfolio</a></li>
+            <li><a class="btn btn-solid btn-soft" id="btn-cta" href="../../../contact/index.html"><span>Contact</span></a></li>
+        </ul>
+        <div class="item-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+
+    <!-- header hero block -->
+    <header class="hero-block hero-block-js">
+        <div class="hero-text-container">
+            <h1 class="title" style="color: #fce0e0;">Dublin Weather <span class="title" style="color: #fff;">JavaScript Project</span></h1>
+            <h2 class="h2">Uses the Fetch API to retrieve current weather information for the city of Dublin, Ireland. View my complete collection of <a href="../index.html">JavaScript projects</a>.</h2>
+        </div>
+    </header>
+
+    <!-- main content with sections -->
+    <main>
+
+        <section class="container-flex theme-js">
+
+            <div class="box-weather">
+                <h3>Weather now in Dublin city, Ireland.</h3>
+
+                <table class="data-table table-lines" id="table-weather-dublin">
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                  <p>Data from <a href="https://openweathermap.org/" target="_blank">Open Weather</a></p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+
+
+    </script>
+
+
+    <!-- footer -->
+	<footer class="theme-dark text-center-desktop text-center-mobile">
+
+		<h2 class="title2">Iruo Umukoro</h2>
+
+		<h3 class="subtitle2">Excellence in digital creation</h3>
+
+		<ul class="footer-links">
+			<li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../portfolio/index.html">Portfolio</a></li>
+            <li><a href="../../../contact/index.html" id="btn-cta"><span>Contact</span></a></li>
+		</ul>
+
+		<ul class="footer-icons">
+			<li><a href="https://www.linkedin.com/in/dora-u-7b1838343/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+			<li><a href="https://github.com/i-ayo" target="_blank"><i class="fab fa-github-square"></i></a></li>
+		</ul>
+
+		<p class="privacy"> <a href="../../../privacy.html">Privacy &amp; Legal</a> </p>
+
+        <div class="copyright">
+            <p>Copyright © 2025 Your Company. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <script src="../assets/js/menu.js"></script>
+
+
+    <script src="app.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+

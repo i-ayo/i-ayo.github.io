@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iruo Umukoro | Front-end Developer | JavaScript Counter Project</title>
+    <meta name="description" content="An increment and decrement counter that changes the colour of the number displayed on the web page.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/favicon-2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/img/favicon-2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/img/favicon-2/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon-2/site.webmanifest">
+
+	<!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/lunadoge.min.css" />
+    <link rel="stylesheet" href="../assets/css/css-javascript.css" />
+    <link rel="stylesheet" href="../../../assets/css/custom.css" />
+
+     <!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 icons for buttons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+        /* ============ Header Colours =============*/
+        header.hero-block-js { background-color: black }
+        header.hero-block-js h1 { color: #222 }
+        header.hero-block-js h2 { color: wh }
+
+        /* Main Colours */
+        .theme-js {
+            background-image:#ff0000; background-image:
+            radial-gradient(at 40% 20%, rgb(245, 164, 94) 0, transparent 50%),
+            radial-gradient(at 80% 0%, rgb(94, 23, 23) 0, transparent 50%),
+            radial-gradient(at 0% 50%, rgb(255, 181, 188) 0, transparent 50%),
+            radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0, transparent 50%),
+            radial-gradient(at 0% 100%, rgb(121, 38, 87) 0, transparent 50%),
+            radial-gradient(at 80% 100%, rgb(103, 27, 59) 0, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%);
+        }
+
+        .theme-js .col-2 { background-color: var(--green-100) }
+        .theme-js h3 { color: #222 }
+        .theme-js p { color: #222 }
+
+        /* Button Colours: passive state */
+        .theme-js a.btn {
+            color: #fff; background-color: blue; transition: 0.2s;
+            border-radius: 6px
+        }
+
+        /* Button Colours: active state */
+        .theme-js a.btn:hover { background-color: darkblue }
+
+        .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) }
+        .theme-js a.btn:hover { filter: brightness(140%) saturate(140%) }
+
+        /* ========= ENDS CUSTOM CSS FOR WEB PAGE ======= */
+
+        .theme-js .btn-container { display: block; width: 100% }
+
+        .theme-js { display: flex; align-items: center; flex-direction:column; text-align: center }
+
+        .theme-js h2 { font-size: 28px; text-align: center; margin: 0 auto }
+        .theme-js #value {
+            font-size: 84px; font-weight: 600;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .theme-js .btn {
+            letter-spacing: 2px;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            background: transparent;
+            padding: 12px 22px;
+            margin: 20px;
+            border: solid 2px #000;
+            border-radius: 6px;
+        }
+
+        .theme-js .btn:hover {
+            background-color: #fff;
+        }
+
+       
+
+    </style>
+
+	<!-- Font Awesome 6.1 icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+
+<body>
+
+    <!-- navigation menu -->
+
+    <nav class="container-menu menu-desktop menu-sticky">
+        <a href="../../../index.html"><img class="logo" src="../../../assets/img/ir.png" alt="website logo"></a>
+        <ul class="links-wrapper">
+            <li><a class="btn1" href="../../../index.html">Home</a></li>
+            <li><a class="btn1" href="../../../portfolio/index.html">Portfolio</a></li>
+            <li><a class="btn btn-solid btn-soft" id="btn-cta" href="../../../contact/index.html"><span>Contact</span></a></li>
+        </ul>
+        <div class="item-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+
+    <!-- header hero block -->
+    <header class="hero-block hero-block-js">
+        <div class="hero-text-container">
+            <h1 class="title" style="color: #fce0e0;">Counter <span class="title" style="color: #fff;">JavaScript Project</span></h1>
+            <h2  class="h2">An increment and decrement counter that changes the colour of the number displayed on the web page. View my complete collection of <a href="../index.html">JavaScript projects</a>.</h2>
+        </div>
+    </header>
+
+    <!-- main content with sections -->
+    <main>
+
+        <section class="container-flex theme-js">
+
+            <h2>counter</h2>
+            <span id="value">0</span>
+
+            <div class="button-container">
+                <button class="btn decrease">decrease</button>
+                <button class="btn reset">reset</button>
+                <button class="btn increase">increase</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        // set inital value to zero
+        let count = 0;
+        // select value and buttons
+        const value = document.querySelector("#value");
+        const btns = document.querySelectorAll(".btn");
+
+        btns.forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+            const styles = e.currentTarget.classList;
+            if (styles.contains("decrease")) {
+                count--;
+            }
+            else if (styles.contains("increase")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+
+            if (count > 0) {
+                value.style.color = "green";
+            }
+            if (count < 0) {
+                value.style.color = "red";
+            }
+            if (count === 0) {
+                value.style.color = "#222";
+            }
+            value.textContent = count;
+        });
+        });
+
+    </script>
+
+
+   <!-- footer -->
+	<footer class="theme-dark text-center-desktop text-center-mobile">
+
+		<h2 class="title2">Iruo Umukoro</h2>
+
+		<h3 class="subtitle2">Excellence in digital creation</h3>
+
+		<ul class="footer-links">
+			<li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../portfolio/index.html">Portfolio</a></li>
+            <li><a href="../../../contact/index.html" id="btn-cta"><span>Contact</span></a></li>
+		</ul>
+
+		<ul class="footer-icons">
+			<li><a href="https://www.linkedin.com/in/dora-u-7b1838343/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+			<li><a href="https://github.com/i-ayo" target="_blank"><i class="fab fa-github-square"></i></a></li>
+		</ul>
+
+		<p class="privacy"> <a href="../../../privacy.html">Privacy &amp; Legal</a> </p>
+
+        <div class="copyright">
+            <p>Copyright © 2025 Your Company. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <script src="../assets/js/menu.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
